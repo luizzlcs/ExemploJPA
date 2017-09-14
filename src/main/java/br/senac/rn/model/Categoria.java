@@ -1,4 +1,8 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package br.senac.rn.model;
 
 import javax.annotation.Generated;
@@ -6,32 +10,36 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import org.hibernate.boot.registry.selector.spi.StrategySelector;
+
+/**
+ *
+ * @author a94092
+ */
 
 @Entity
-public class Sexo {
+public class Categoria {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String nome;
-    private char sigla;
+    private String descricao;
 
-    public Sexo() {
+    public Categoria() {
     }
 
-    public Sexo(int id, String nome, char sigla) {
+    public Categoria(int id, String nome, String descricao) {
         this.id = id;
         this.nome = nome;
-        this.sigla = sigla;
+        this.descricao = descricao;
     }
 
-    public char getSigla() {
-        return sigla;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setSigla(char sigla) {
-        this.sigla = sigla;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
     public int getId() {
@@ -52,8 +60,8 @@ public class Sexo {
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 53 * hash + this.id;
+        int hash = 5;
+        hash = 11 * hash + this.id;
         return hash;
     }
 
@@ -68,7 +76,7 @@ public class Sexo {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Sexo other = (Sexo) obj;
+        final Categoria other = (Categoria) obj;
         if (this.id != other.id) {
             return false;
         }
@@ -77,8 +85,9 @@ public class Sexo {
 
     @Override
     public String toString() {
-        return "Sexo{" + "id=" + id + ", nome=" + nome + ", sigla=" + sigla + '}';
+        return "Categoria{" + "id: " + id + ", nome: " + nome + ", descricao: " + descricao + '}';
     }
+    
     
     
     
