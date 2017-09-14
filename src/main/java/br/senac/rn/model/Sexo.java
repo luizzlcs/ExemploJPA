@@ -16,14 +16,24 @@ public class Sexo {
     private int id;
     private String nome;
     private char sigla;
+    private String descricao;
 
     public Sexo() {
     }
 
-    public Sexo(int id, String nome, char sigla) {
+    public Sexo(int id, String nome, char sigla, String descricao) {
         this.id = id;
         this.nome = nome;
         this.sigla = sigla;
+        this.descricao = descricao;
+    }
+    
+    public String getDescricao(){
+        return descricao;
+    }
+    
+    public void setDescricao(String descricao){
+        this.descricao = descricao;
     }
 
     public char getSigla() {
@@ -77,7 +87,7 @@ public class Sexo {
 
     @Override
     public String toString() {
-        return "Sexo{" + "id=" + id + ", nome=" + nome + ", sigla=" + sigla + '}';
+        return "Sexo{-> " + "id: " + id + ", nome: " + nome + ", sigla: " + sigla + "Descrição: " + descricao + " <-}";
     }
     
     
